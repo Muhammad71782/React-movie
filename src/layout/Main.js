@@ -5,7 +5,7 @@ import Search from "../components/Search"
 export default class Main extends React.Component {
   state = {
     movies: [],
-    loading: false
+    loading: true
   }
   componentDidMount() {
     fetch('https://www.omdbapi.com/?apikey=3bf3e15&s=panda')
