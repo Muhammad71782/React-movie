@@ -8,13 +8,13 @@ export default class Main extends React.Component {
     loading: false
   }
   componentDidMount() {
-    fetch('http://www.omdbapi.com/?apikey=3bf3e15&s=panda')
+    fetch('https://www.omdbapi.com/?apikey=3bf3e15&s=panda')
       .then(response => response.json())
       .then(data => this.setState({ movies: data.Search, loading: false }))
   }
   search = (str, type = 'all') => {
     this.setState({ loading: true })
-    fetch(`http://www.omdbapi.com/?apikey=3bf3e15&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
+    fetch(`https://www.omdbapi.com/?apikey=3bf3e15&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
       .then(response => response.json())
       .then(data => this.setState({ movies: data.Search, loading: false }))
   }
